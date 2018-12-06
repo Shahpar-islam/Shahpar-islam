@@ -16,10 +16,10 @@
   <title>Shahpar-islam</title>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#main-nav" id="home">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="main-nav">
     <div class="container">
       <!--Adding the Brand Name-->
       <a href="index.html" class="navbar-brand">Shahpar-islam</a>
@@ -37,16 +37,14 @@
             <a href="#skills" class="nav-link">SKILLS</a>
           </li>
           <li class="nav-item">
-            <a href="#aboutMe-head-section" class="nav-link">ABOUT ME</a>
+            <a href="#about" class="nav-link">ABOUT ME</a>
           </li>
           <li class="nav-item">
-            <a href="#contact-head-section" class="nav-link">CONTACT</a>
+            <a href="#contact" class="nav-link">CONTACT</a>
           </li>
         </ul>
       </div>
     </div>
-  </nav>
-  </div>
   </nav>
   <!--Navigation-->
 
@@ -80,7 +78,6 @@
           </div>
         </div>
       </div>
-    </div>
     </div>
   </header>
 
@@ -263,6 +260,92 @@
   </aside>
 
   <!--About Me-->
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">About Me</h2>
+          <h3 class="section-subheading text-muted">Let's break the ice a little.</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="team-member">
+            <img src="img/aboutMe.jpg" class="img-fluid rounded-circle img-aboutMe" alt="ShahparIslam photo">
+            <h4>Shahpar Islam</h4>
+            <p class="text-muted">React | React Native | Node JS</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-12 col-lg-8 col-lg-offset-2 text-center">
+            <p class="large text-muted">Hi there! I am a Fullstack developer specialized in React and Node.js.<br /><br />I've
+              always had a passion for technology and product development - even before becoming a developer, having
+              worn many hats in my career between business development, sales and product management for tech giants
+              and startups in China, Brazil and the US. I use my experience to be more than just a coder, connecting
+              business requirements with modern technology.<br /><br />I have 4+ years of development experience
+              building fullstack products from scratch, developing and integrating APIs, working with a variety of
+              databases and clould platforms and more recently developing mobile applications with React Native.<br /><br />
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!--Contact Section-->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Contact Me</h2>
+          <h3 class="section-subheading">I'd love to hear from you.</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <form method="post" action="/contact" name="sentMessage" id="contactForm">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Your Name *" name="name" id="name">
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" placeholder="Your Email *" name="email" id="email">
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                  <input type="tel" class="form-control" placeholder="Your Phone *" name="phone" id="phone">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <textarea class="form-control" placeholder="Your Message *" name="message" id="message"></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="col-lg-12 text-center">
+                <div id="success"></div>
+                <button type="submit" class="btn btn-xl">Send Message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--footer-->
+  <footer class="bg-light text-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p>Shahpar-islam &copy; <span id="year"></span></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -276,6 +359,19 @@
   <script>
     // Get the current year for the copyright
     $('#year').text(new Date().getFullYear());
+
+    //smooth scrolling
+    $("#main-nav a").on('click', function (event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+        const hash = this.hash;
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function () {
+          window.location.hash = hash;
+        });
+      }
+    });
   </script>
 </body>
 

@@ -143,6 +143,33 @@ section h3.section-subheading {
 
 /*Skills Section*/
 
+/*AboutMe*/
+
+img-aboutMe {
+  width : 100px;
+  height: 100px;
+}
+
+/*Contact*/
+.contact-section {
+  background: url(../img/map-image.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 600px;
+  
+  
+}
+
+
+/*Bootstrap 3*/
+@media (min-width: 768px) {
+  .col-lg-offset-2 {
+    margin-left: 16.66666667%;
+  }
+
+}
+
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -707,14 +734,17 @@ body {
       padding: 0 100px 20px 20px;
     }
   }
+
   .team-member {
     text-align: center;
     margin-bottom: 50px;
   }
+
   .team-member img {
     margin: 0 auto;
     border: 7px solid white;
   }
+
   .team-member h4 {
     margin-top: 25px;
     margin-bottom: 0;
